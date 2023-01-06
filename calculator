@@ -1,4 +1,4 @@
-# Program for simple calculator that will calculate following operations for two
+# RISC-V program for simple calculator that will calculate following operations for two
 # integers:
 # - sum saving the result in register t0
 # - subtraction saving the result in register t1
