@@ -1,0 +1,18 @@
+SEISKA - SÄÄNNÖT
+
+Pakka: 52 korttia (jos pelaajia yli 6 niin pelataan kahdella pakalla)
+Pelaajia: 2 - 7 kpl
+
+Jako:
+Pelaajille jaetaan seitsemän korttia. Pakan ylin kortti pelataan pöytään alkukortiksi. Jos kortti on seiska tai ässä, laitetaan se takaisin pakkaan ja nostetaan tilalle uusi kortti.
+
+Pelin kulku:
+Pelaaja 1 aloittaa pelaamalla kortin, joka on samannumeroinen tai samaa maata kuin pöydän päällimmäinen kortti. Sen jälkeen vuoro siirtyy seuraavalle pelaajalle. Jos pelaaja ei voi pelata 
+mitään korttia, on hänen nostettava uusia kortteja pakasta kunnes pystyy pelaamaan kortin pöytään. Kuitenkin max kolme nostoa. Kortti pelataan pöytään vasta seuraavalla vuorolla.
+
+Erikoiskortit:
+- Seiskan saa pelata aina ja sen pöytään lyönyt pelaaja nimeää maan, jota seuraavaksi on pelattava.
+- Ässä pelataan normaalisti sääntöjen mukaan ja peli jatkuu siitä tavalliseen tapaan, mutta seuraavan pelaajan on nostettava kolme korttia vaikka pystyisikin pelaamaan sopivan kortin.
+
+Pelin päättyminen:
+Peli päättyy, kun joku pelaa viimeisen korttinsa.
