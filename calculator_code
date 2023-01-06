@@ -1,0 +1,66 @@
+# Program for simple calculator that will calculate following operations for two
+# integers:
+# - sum saving the result in register t0
+# - subtraction saving the result in register t1
+# - absolute values saving the results in registers t2 and t3
+# - sum of absolute values saving the result in register t4
+# Program will calculate each operation once and then returning the results from right
+# memory addresses
+
+MAIN:
+addi sp, sp, -20 # Allocate stack for 5 int space -> 5*4 = 20
+addi a0, zero, -2 # define x = -2
+addi a1, zero, 4 # define y = 4
+jal ra, ADDITION # move to the addition operation
+jal ra, SUBSTRACTION # jump to the substraction operation
+jal ra, ABSVALUES # jump to the operation that calculates absolute values for x and y
+jal ra, ABSADD # jump to the operation that calculates sum of absolute values
+jal ra, RETURN # jump to returning values
+jal ra, EXIT # jump to EXIT
+
+ADDITION:
+add t0, a0, a1 # sums values x & y, moves the sum to t0
+sw t0, 0(s2) # storages the value as a size 4 into the memory location
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+SUBSTRACTION:
+sub t1, a0, a1 # substarcts values x & y, moves the sum to t1
+sw t1, 4(s2) # storages the new value as a size 4 into the memory location
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+ABSVALUES:
+sub t5, zero, a0 # t5 = 0 - x = -x
+sub t6, zero, a1 # t6 = 0 - y = -y
+blt a0, zero, L1 # compares x and zero and goes to L1 if x < 0
+add t2, zero, a0 # if x is positive, adds its value to t2
+sw t2, 8(s2) # storages value of t2 into the memory location
+jalr x0, ra, 64 # jumps to the line that compares value of y
+
+L1:
+add t2, zero, t5 # if x is negative, t2 = 0 - (-x) (x’s absolute value)
+sw t2, 8(s2) # storages value of t2 into the memory location
+blt a1, zero, L2 # compares the y and zero and goes to L2 if y < 0
+add t3, zero, a1 # if y is positive, adds its value to t3
+sw t3, 12(s2) # storages value of t3 into the memory location
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+L2:
+add t3, zero, t6 # if y is negative, t3 = 0 - (-y) (y’s absolute value)
+sw t3, 12(s2) # storages value of t3 into the memory location
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+ABSADD:
+add t4, t2, t3 # adds the sum of t2 and t3 into register t4
+sw t4, 16(s2) # storages value of t4 into the memory location
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+RETURN:
+lw t0, 0(s2) # loads the value of the sum from memory
+lw t1, 4(s2) # loads the value of the subtraction from memory
+lw t2, 8(s2) # loads the value of x’s absolute value from memory
+lw t3, 12(s2) # loads the value of y’s absolute value from memory
+lw t4, 16(s2) # loads the value of the sum of absolute values from memory
+addi sp, sp, 20 # pop from the stack
+jalr x0, ra, 0 # jumps back to MAIN to continue the code
+
+EXIT: # exit the program
