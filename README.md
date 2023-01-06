@@ -4,3 +4,5 @@ There are projects with following languages:
 - Java
 - Python
 - RISC-V
+
+Code is mainly written in Finnish.
