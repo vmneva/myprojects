@@ -1,4 +1,4 @@
-# My projects for CV
+# My projects for portfolio
 Here are some projects that I have coded during my ICT studies.
 There are projects with following languages:
 - Java
