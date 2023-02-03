@@ -1,3 +1,7 @@
+/*
+Yksinkertainen sovellus kurssien tietojen näyttämiseen
+*/
+
 const Part = (props) => {
   return (
     <div>
