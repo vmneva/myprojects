@@ -1,3 +1,7 @@
+/*
+Yksinkertainen sovellus palautteen keräämiseen ja statistiikkaan.
+*/
+
 import { useState } from 'react'
 
 const Button = ({ handleClick, text }) => (
