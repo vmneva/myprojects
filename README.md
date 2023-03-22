@@ -4,6 +4,6 @@ There are projects with following languages:
 - Java
 - Python
 - RISC-V
-- JavaScript (this is going to be updated during Spring 2023)
+- JavaScript + React
 
 Code is mainly written in Finnish.
