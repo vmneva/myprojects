@@ -1,0 +1,8 @@
+//Kutsu henkilön lisäämiseen
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Mandy Morgan",
+    "number": "044-78945611"
+}

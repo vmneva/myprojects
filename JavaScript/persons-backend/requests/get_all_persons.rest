@@ -1,0 +1,2 @@
+//Kutsu koko puhelinluettelon hakemiselle
+GET http://localhost:3001/api/persons

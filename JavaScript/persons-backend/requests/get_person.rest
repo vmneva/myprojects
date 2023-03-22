@@ -1,0 +1,2 @@
+//Kutsu henkilön hakemiselle id:n perusteella. Part3 alkupuolella id:t kokonaislukuja, lopussa merkkijonotyyppisiä
+GET http://localhost:3001/api/persons/1
