@@ -1,4 +1,3 @@
-//Eriytetään tietokantamäärittely moduuliksi
 const mongoose = require('mongoose')
 const url = process.env.MONGODB_URI
 
@@ -11,7 +10,6 @@ mongoose.connect(url)
     console.log('error connecting to MongoDB:', error.message)
   })
 
-//Mongoosen palauttamien olioiden muotoilu:
 const personSchema = new mongoose.Schema({
   name: String,
   number: String,
@@ -26,5 +24,4 @@ personSchema.set('toJSON', {
   }
 })
 
-//nämä arvot näkyvät modelin käyttäjälle
 module.exports = mongoose.model('Person', personSchema)
