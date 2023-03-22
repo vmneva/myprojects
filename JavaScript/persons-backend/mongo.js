@@ -1,7 +1,5 @@
-// Tehtävä 3.11
 const mongoose = require('mongoose')
 
-//jos komentoriviparametrejä alle kolme, pyydetään salasanaa
 if (process.argv.length<3) {
   console.log('give password!')
   process.exit(1)
@@ -13,22 +11,19 @@ const url =
 
 mongoose.connect(url)
 
-const personSchema = new mongoose.Schema({  //muuttujaan personSchema määritellään henkilön skeema eli miten oliot tulee tallettaa tietokantaan
+const personSchema = new mongoose.Schema({ 
   name: String,
   number: String,
   favourite: Boolean,
 })
 
-const Person = mongoose.model('Person', personSchema)   //modelin parametri Person -> oliot tallettuu kokoelmaan people
-//sovellus luo henkilöä vastaavan model:in avulla person-olion
+const Person = mongoose.model('Person', personSchema)
 const person = new Person({
-  //määritelty komentoriviparametrien avulla:
   name: process.argv[3],
   number: process.argv[4],
   favourite: process.argv[5],
 })
 
-//jos komentoriviparametrejä alle 4 (vain salasana), tulostetaan tietokannassa olevat henkilöt
 if (process.argv.length<4) {
     console.log(`phonebook:`)
     Person.find({}).then(result => {
@@ -39,7 +34,6 @@ if (process.argv.length<4) {
       })
   }
 else {
-//talletetaan olio tietokantaan ja palautuvalle promiselle rekisteröidään then-metodin avulla tapahtumankäsittelijä
     person.save().then(result => {
         console.log(`added ${person.name} number ${person.number} to phonebook, favourite: ${person.favourite}`)
         mongoose.connection.close()   //kun olio talletettu, suljetaan tietokantayhteys, jotta ohjelman suoritus päättyy
