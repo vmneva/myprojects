@@ -1,2 +1,1 @@
-//Kutsu henkilön poistamiseen id:n avulla. Part3 alkupuoliskolla id:t kokonaislukuja, loppupuolella merkkijonon tapaisia
 DELETE http://localhost:3001/api/persons/641ad35ea24889ab1083b592
